@@ -51,7 +51,10 @@ namespace Tic_Tac_Toe
                 XorO++;
                 if (win == true)
                 {
-                    btn.Enabled = false;
+                    foreach (Control c in panel2.Controls)
+                    {
+                        c.Enabled = false;
+                    }
                 }
             }
             
@@ -127,6 +130,8 @@ namespace Tic_Tac_Toe
             b3.ForeColor = Color.White;
 
             label1.Text = b1.Text + " Wins!";
+            string message = "We have a winner!";
+            MessageBox.Show(message);
         }
 
         private void ButtonNew_Click(object sender, EventArgs e)
@@ -141,6 +146,7 @@ namespace Tic_Tac_Toe
                     c.Text = "";
                     c.BackColor = Color.White;
                 }
+                c.Enabled = true;
             }
         }
     }
